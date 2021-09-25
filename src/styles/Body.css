@@ -1,0 +1,46 @@
+.home {
+  background-image: url(../imgs/IMG.png);
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  height: 223px;
+  border-radius: 25px;
+}
+
+.home__title {
+  background-color: rgb(0, 0, 0, 0.3);
+  padding: 82px;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 25px;
+}
+
+.home__grid {
+  margin-top: 60px;
+  background-color: #f7f7f7;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(auto, 340px));
+  gap: 60px;
+  padding: 50px;
+  border-radius: 25px;
+}
+
+.home__grid__article {
+  height: 340px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 96, 96, 1) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.home__grid__article h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: auto auto 30px 20px;
+  color: #ffffff;
+}

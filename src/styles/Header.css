@@ -1,0 +1,31 @@
+.header {
+  height: 68px;
+  margin-top: 2em;
+  font-size: 24px;
+  font-weight: 500;
+  color: #ff6060;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header a {
+  text-decoration: none;
+  color: #ff6060;
+}
+
+.header__logo {
+  width: 210px;
+}
+
+.header__menu {
+  display: flex;
+  list-style: none;
+}
+
+.header__menu > li {
+  margin-left: 1em;
+}
+
+.header__menu__index {
+  text-decoration: underline;
+}
