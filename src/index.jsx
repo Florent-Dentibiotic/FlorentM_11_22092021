@@ -5,27 +5,29 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Error from './pages/Error';
+import Error from './components/Error';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Lodging from './pages/Lodging';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Header />
-      <Route exact path="/">
-          <Home />
-      </Route>
-      <Route path="/Lodging">
-          <Lodging />
-      </Route>
-      <Route path="/about">
-          <About />
-      </Route>
-      <Route path="/error">
-          <Error />
-      </Route>
+      <Switch>
+        <Route exact path="/">
+            <Home />
+        </Route>
+        <Route path="/Lodging">
+            <Lodging />
+        </Route>
+        <Route path="/about">
+            <About />
+        </Route>
+        <Route>
+            <Error />
+        </Route>
+      </Switch>
       <Footer />
     </Router>
   </React.StrictMode>,
