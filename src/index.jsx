@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Home from './pages/Home';
 import About from './pages/About';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -15,7 +15,7 @@ ReactDOM.render(
     <Router>
       <Header />
       <Route exact path="/">
-          <App />
+          <Home />
       </Route>
       <Route path="/Lodging">
           <Lodging />

@@ -1,8 +1,9 @@
 import Carrousel from "../components/Carrousel"
 
 function Lodging(){
-    return(
+    return(<main>
         <Carrousel />
+    </main>
     )
 }
 
