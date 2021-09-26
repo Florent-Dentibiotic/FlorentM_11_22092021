@@ -1,0 +1,10 @@
+.about {
+  margin-top: 50px;
+}
+
+.about__img {
+  width: 1240px;
+  height: 223px;
+  object-fit: cover;
+  border-radius: 25px;
+}

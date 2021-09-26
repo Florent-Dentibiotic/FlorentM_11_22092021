@@ -1,6 +1,7 @@
 .error__404 {
   color: #ff6060;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .error__404 > h2 {
