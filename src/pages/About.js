@@ -1,6 +1,7 @@
 import '../styles/About.css'
 import aboutImg from '../imgs/about__img.jpeg'
 import Dropdown from '../components/Dropdown'
+import { Component } from 'react'
 
 const Abouts = [
     { title: 'Fiabilité', details:'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.'},
@@ -13,18 +14,22 @@ const Abouts = [
 //     <Dropdown title={element.title} details={element.details}/>
 //     )
 
-function About() {
-    return (
+class About extends Component {
+    render(){
+        return (
         <div className="about">
             <img src={ aboutImg } alt='Mountains' className="about__img" />
             <div>
-                <Dropdown title={Abouts[0].title} details={Abouts[0].details}/>
-                <Dropdown title={Abouts[1].title} details={Abouts[1].details}/>
-                <Dropdown title={Abouts[2].title} details={Abouts[2].details}/>
-                <Dropdown title={Abouts[3].title} details={Abouts[3].details}/>
+                {Abouts.map((about, index) => (
+                    <Dropdown
+                        key={`${about.title}-${index}`}
+                        title={about.title}
+                        details={about.details}
+                    />
+                ))}
             </div>
         </div>
-    )
+    )}
 }
 
 export default About

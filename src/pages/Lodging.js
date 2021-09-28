@@ -1,10 +1,13 @@
 import Carrousel from "../components/Carrousel"
+import { Component } from "react"
 
-function Lodging(){
-    return(<main>
-        <Carrousel />
-    </main>
-    )
+class Lodging extends Component{
+    render(){
+    return(
+        <main>
+            <Carrousel />
+        </main>
+    )}
 }
 
 export default Lodging
