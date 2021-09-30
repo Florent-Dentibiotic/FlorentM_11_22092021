@@ -42,6 +42,8 @@ componentDidMount() {
 
     render(){    
         const lodgingData = this.state.lodgingData
+        const Equipments = this.state.lodgingData.equipments
+        console.log(Equipments)
         // let userId = this.props.match.params.lodgingId;
     return(
         <main>
@@ -51,7 +53,7 @@ componentDidMount() {
             <Tags tags= {lodgingData.tags}/>
             <InfosSection>
             <Dropdown title={`Description`} details={lodgingData.description}/>
-            <Dropdown title={`Équipements`} details={lodgingData.equipments}/>
+            <Dropdown title={`Équipements`} details={<ul>{Equipments && Equipments.map(equipment => <li key={`equipment-${equipment}`}>{equipment}</li>)}</ul>}/>
             </InfosSection>
         </main>
     )}

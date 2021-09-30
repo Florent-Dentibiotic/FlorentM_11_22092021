@@ -31,7 +31,7 @@ class Tags extends Component {
         console.log(tags)
 
         return(<TagsUl>
-            {tags && tags.map(tag => <TagsLi key={`tag-${tag.id}`}>{tag}</TagsLi>)}
+            {tags && tags.map(tag => <TagsLi key={`tag-${tag}`}>{tag}</TagsLi>)}
         </TagsUl>
         )
     }
