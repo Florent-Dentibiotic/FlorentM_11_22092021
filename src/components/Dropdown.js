@@ -35,23 +35,31 @@ const DropdownDetails = styled.div`
 class Dropdown extends Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+            counter: 1,
+            details: '',
+            thisChevron: <i className="fas fa-chevron-down"></i>
+        }
+    }
+
+    showDetails = () => {
+        if(this.state.counter%2 === 0){
+            this.setState({counter: this.state.counter + 1, details: '', thisChevron: <i className="fas fa-chevron-down"></i>})
+        } else {
+            this.setState({counter: this.state.counter + 1, details: <DropdownDetails>{this.props.details}</DropdownDetails>, thisChevron: <i className="fas fa-chevron-up"></i>})
+        }
     }
 
     render() {
-        const chevronDown = <i className="fas fa-chevron-down"></i>
-        //const chevronUp = <i className="fas fa-chevron-up"></i>
-        const {title, details} = this.props
+        const {title} = this.props
 
-        return(
+        return (
             <DropdownSection>
-                <DropdownTitle>
+                <DropdownTitle onClick={this.showDetails}>
                     <h3>{title}</h3>
-                    {chevronDown}
+                    {this.state.thisChevron}
                 </DropdownTitle>
-                <DropdownDetails>
-                    {details}
-                </DropdownDetails>
+                {this.state.details}
             </DropdownSection>
         )
         
