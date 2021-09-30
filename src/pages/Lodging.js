@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import colors from '../utils/style/color'
 import { Component } from "react"
 import Dropdown from "../components/Dropdown"
+import Tags from "../components/Tags"
 
 const LodgingH1 = styled.h1`
     font-size: 36px;
@@ -12,6 +13,11 @@ const LodgingH1 = styled.h1`
 const LodgingH2 = styled.h2`
     font-size: 18px;
     color: ${colors.primary};
+`
+const InfosSection = styled.section`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(auto, 580px));
+    gap: 76px;
 `
 
 class Lodging extends Component{
@@ -42,11 +48,11 @@ componentDidMount() {
             <Carrousel imgs={lodgingData.pictures}/>
             <LodgingH1>{lodgingData.title}</LodgingH1>
             <LodgingH2>{lodgingData.location}</LodgingH2>
-            <ul>
-                {lodgingData.tags}
-            </ul>
+            <Tags tags= {lodgingData.tags}/>
+            <InfosSection>
             <Dropdown title={`Description`} details={lodgingData.description}/>
             <Dropdown title={`Équipements`} details={lodgingData.equipments}/>
+            </InfosSection>
         </main>
     )}
 }

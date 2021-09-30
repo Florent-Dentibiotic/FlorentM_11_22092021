@@ -3,7 +3,7 @@ import colors from '../utils/style/color'
 import { Component } from 'react'
 
 const DropdownSection = styled.section`
-    width: 1023px;
+    width: 100%;
     margin: 33px auto;
 `
 

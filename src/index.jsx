@@ -20,7 +20,6 @@ ReactDOM.render(
         </Route>
         <Route path="/Lodging/:lodgingId" 
         render={(props) => <Lodging {...props} />}/>
-        
         <Route path="/about">
             <About />
         </Route>

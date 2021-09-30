@@ -2,6 +2,12 @@ import '../styles/About.css'
 import aboutImg from '../imgs/about__img.jpeg'
 import Dropdown from '../components/Dropdown'
 import { Component } from 'react'
+import styled from 'styled-components'
+
+const SectionDetails = styled.section`
+    width: 1023px;
+    margin: auto;
+`
 
 const Abouts = [
     { title: 'Fiabilité', details:'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.'},
@@ -17,9 +23,9 @@ const Abouts = [
 class About extends Component {
     render(){
         return (
-        <div className="about">
+        <main className="about">
             <img src={ aboutImg } alt='Mountains' className="about__img" />
-            <div>
+            <SectionDetails>
                 {Abouts.map((about, index) => (
                     <Dropdown
                         key={`${about.title}-${index}`}
@@ -27,8 +33,8 @@ class About extends Component {
                         details={about.details}
                     />
                 ))}
-            </div>
-        </div>
+            </SectionDetails>
+        </main>
     )}
 }
 
