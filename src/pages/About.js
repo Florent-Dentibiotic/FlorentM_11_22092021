@@ -2,12 +2,7 @@ import '../styles/About.css'
 import aboutImg from '../imgs/about__img.jpeg'
 import Dropdown from '../components/Dropdown'
 import { Component } from 'react'
-import styled from 'styled-components'
 
-const SectionDetails = styled.section`
-    width: 1023px;
-    margin: auto;
-`
 
 const Abouts = [
     { title: 'Fiabilité', details:'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes.'},
@@ -16,16 +11,12 @@ const Abouts = [
     {title: 'Sécurité', details:"La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."}
 ]
 
-// const AboutsDropdown = Abouts.forEach(element => 
-//     <Dropdown title={element.title} details={element.details}/>
-//     )
-
 class About extends Component {
     render(){
         return (
         <main className="about">
             <img src={ aboutImg } alt='Mountains' className="about__img" />
-            <SectionDetails>
+            <section className='about__details'>
                 {Abouts.map((about, index) => (
                     <Dropdown
                         key={`${about.title}-${index}`}
@@ -33,7 +24,7 @@ class About extends Component {
                         details={about.details}
                     />
                 ))}
-            </SectionDetails>
+            </section>
         </main>
     )}
 }

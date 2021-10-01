@@ -34,3 +34,31 @@
   font-weight: 500;
   color: #fff;
 }
+
+@media (max-width: 375px) {
+  .carrousel {
+    height: 255px;
+  }
+  .carrousel__img {
+    height: 255px;
+    width: 335px;
+    border-radius: 10px;
+  }
+  .fa-chevron-right {
+    font-size: 24px;
+    right: 25px;
+    top: 50%;
+    margin-top: -10px;
+  }
+
+  .fa-chevron-left {
+    position: absolute;
+    font-size: 24px;
+    left: 25px;
+    top: 50%;
+    margin-top: -10px;
+  }
+  .carrousel__img__number {
+    display: none;
+  }
+}

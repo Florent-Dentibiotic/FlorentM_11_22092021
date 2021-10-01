@@ -1,0 +1,28 @@
+.tags__list {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+}
+
+.tags__list__item {
+  min-width: 115px;
+  border-radius: 10px;
+  background-color: #ff6060;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+@media (max-width: 375px) {
+  .tags__list {
+    max-width: 335px;
+  }
+  .tags__list__item {
+    min-width: 84px;
+    font-size: 10px;
+    border-radius: 5px;
+  }
+}

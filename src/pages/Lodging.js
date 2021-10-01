@@ -1,31 +1,22 @@
 import Carrousel from "../components/Carrousel"
-import styled from 'styled-components'
-import colors from '../utils/style/color'
 import { Component } from "react"
 import Dropdown from "../components/Dropdown"
 import Tags from "../components/Tags"
-
-const LodgingH1 = styled.h1`
-    font-size: 36px;
-    color: ${colors.primary};
-`
-
-const LodgingH2 = styled.h2`
-    font-size: 18px;
-    color: ${colors.primary};
-`
-const InfosSection = styled.section`
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(auto, 580px));
-    gap: 76px;
-`
+import '../styles/Lodging.css'
 
 class Lodging extends Component{
     constructor(props) {
     super(props)
     this.state = {
         lodgingId: this.props.match.params.lodgingId,
-        lodgingData: []
+        lodgingData: [],
+        rating: [
+        <div className='star__rating'><i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></div>,
+        <div className='star__rating'><i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></div>,
+        <div className='star__rating'><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></div>,
+        <div className='star__rating'><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></div>,
+        <div className='star__rating'><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i></div>,
+        <div className='star__rating'><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></div>]
     }
 }
 
@@ -43,18 +34,33 @@ componentDidMount() {
     render(){    
         const lodgingData = this.state.lodgingData
         const Equipments = this.state.lodgingData.equipments
-        console.log(Equipments)
+        const Host = this.state.lodgingData.host
+        const rating = this.state.rating
+        console.log(rating)
         // let userId = this.props.match.params.lodgingId;
     return(
         <main>
             <Carrousel imgs={lodgingData.pictures}/>
-            <LodgingH1>{lodgingData.title}</LodgingH1>
-            <LodgingH2>{lodgingData.location}</LodgingH2>
-            <Tags tags= {lodgingData.tags}/>
-            <InfosSection>
-            <Dropdown title={`Description`} details={lodgingData.description}/>
-            <Dropdown title={`Équipements`} details={<ul>{Equipments && Equipments.map(equipment => <li key={`equipment-${equipment}`}>{equipment}</li>)}</ul>}/>
-            </InfosSection>
+            <section className='lodging__title'>
+                <div>
+                    <h1>{lodgingData.title}</h1>
+                    <h2>{lodgingData.location}</h2>
+                    <div className='tags__star'>
+                        <Tags tags= {lodgingData.tags}/>
+                    </div>
+                </div>
+                <div className='lodging__host__details'>
+                    <div className='lodging__title__details'>
+                        {Host && <><h4>{Host.name}</h4> <img alt='host' src={`${Host.picture}`} /></>}
+                    </div>
+                    {rating[lodgingData.rating]}
+                </div>
+            </section>
+
+            <section className='lodging__dropdowns'>
+                <Dropdown title={`Description`} details={lodgingData.description}/>
+                <Dropdown title={`Équipements`} details={<ul className='equipment__details'>{Equipments && Equipments.map(equipment => <li key={`equipment-${equipment}`}>{equipment}</li>)}</ul>}/>
+            </section>
         </main>
     )}
 }

@@ -1,36 +1,5 @@
-import styled from 'styled-components'
-import colors from '../utils/style/color'
 import { Component } from 'react'
-
-const DropdownSection = styled.section`
-    width: 100%;
-    margin: 33px auto;
-`
-
-const DropdownTitle = styled.div`
-    color: #fff;
-    background-color: ${colors.primary};
-    border-radius: 5px;
-    font-size: 24px;
-    font-weight: 500;
-    height: 47px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 18px;
-    padding-right: 18px;
-    z-index: 10;
-`
-const DropdownDetails = styled.div`
-    background-color: ${colors.grey};
-    margin-top: 0;
-    z-index: 0;
-    padding: 18px;
-    color: ${colors.primary};
-    font-size: 24px;
-    font-weight: 400;
-    border-radius: 5px;
-`
+import '../styles/Dropdown.css'
 
 class Dropdown extends Component {
     constructor(props) {
@@ -46,7 +15,7 @@ class Dropdown extends Component {
         if(this.state.counter%2 === 0){
             this.setState({counter: this.state.counter + 1, details: '', thisChevron: <i className="fas fa-chevron-down"></i>})
         } else {
-            this.setState({counter: this.state.counter + 1, details: <DropdownDetails>{this.props.details}</DropdownDetails>, thisChevron: <i className="fas fa-chevron-up"></i>})
+            this.setState({counter: this.state.counter + 1, details: <div className='dropdown__details'>{this.props.details}</div>, thisChevron: <i className="fas fa-chevron-up"></i>})
         }
     }
 
@@ -54,13 +23,13 @@ class Dropdown extends Component {
         const {title} = this.props
 
         return (
-            <DropdownSection>
-                <DropdownTitle onClick={this.showDetails}>
+            <div className='dropdown'>
+                <div className='dropdown__title' onClick={this.showDetails}>
                     <h3>{title}</h3>
                     {this.state.thisChevron}
-                </DropdownTitle>
+                </div>
                 {this.state.details}
-            </DropdownSection>
+            </div>
         )
         
     }

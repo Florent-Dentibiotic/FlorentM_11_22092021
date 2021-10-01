@@ -26,7 +26,7 @@ class Home extends Component{
     return (
         <main>
             <section className='home'>
-                <h2 className='home__title'>Chez vous, partout et ailleurs</h2>
+                <div className='home__background'><h2 className='home__title'>Chez vous, partout et ailleurs</h2></div>
             </section>
             <section className='home__grid'>
                 {logementData.map((logement) => (

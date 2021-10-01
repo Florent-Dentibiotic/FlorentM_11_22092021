@@ -7,3 +7,17 @@
   justify-content: center;
   align-items: center;
 }
+
+.footer p {
+  font-size: 24px;
+}
+
+@media (max-width: 375px) {
+  .footer {
+    width: 375px;
+    margin-left: -20px;
+  }
+  .footer p {
+    font-size: 12px;
+  }
+}

@@ -1,11 +1,12 @@
 .header {
   height: 68px;
-  margin-top: 2em;
+  margin: 2em auto;
   font-size: 24px;
   font-weight: 500;
   color: #ff6060;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header a {
@@ -28,4 +29,20 @@
 
 .header__menu__index {
   text-decoration: underline;
+}
+
+@media (max-width: 375px) {
+  .header {
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .header__logo {
+    width: 145px;
+    height: 47px;
+  }
+
+  .header a {
+    text-transform: uppercase;
+  }
 }

@@ -8,3 +8,12 @@
   object-fit: cover;
   border-radius: 25px;
 }
+
+@media (max-width: 375px) {
+  .about__img {
+    width: 335px;
+  }
+  .about__details {
+    width: 335px;
+  }
+}

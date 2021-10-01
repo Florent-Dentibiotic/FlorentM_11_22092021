@@ -1,24 +1,6 @@
 import { Component } from 'react'
-import styled from 'styled-components'
-import colors from '../utils/style/color'
+import '../styles/Tags.css'
 
-const TagsUl = styled.ul`
-    list-style: none;
-    display: flex;
-    padding-left: 0
-`
-
-const TagsLi = styled.li`
-    min-width: 115px;
-    border-radius: 10px;
-    background-color: ${colors.primary};
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    text-align: center;
-    margin-right: 10px;
-    padding: 5px
-`
 
 class Tags extends Component {
     constructor(props) {
@@ -30,9 +12,10 @@ class Tags extends Component {
         const tags = this.props.tags
         console.log(tags)
 
-        return(<TagsUl>
-            {tags && tags.map(tag => <TagsLi key={`tag-${tag}`}>{tag}</TagsLi>)}
-        </TagsUl>
+        return(
+        <ul className='tags__list'>
+            {tags && tags.map(tag => <li className='tags__list__item' key={`tag-${tag}`}>{tag}</li>)}
+        </ul>
         )
     }
 }
