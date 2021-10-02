@@ -4,6 +4,8 @@
 }
 
 .dropdown__title {
+  position: relative;
+  z-index: 1;
   color: #fff;
   background-color: #ff6060;
   border-radius: 5px;
@@ -18,8 +20,9 @@
 }
 
 .dropdown__details {
+  position: relative;
   background-color: #f6f6f6;
-  margin-top: 0;
+  margin-top: -10px;
   z-index: 0;
   padding: 18px;
   color: #ff6060;

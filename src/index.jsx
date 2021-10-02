@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './pages/Home';
 import About from './pages/About';
-import Header from './components/Header';
 import Footer from './components/Footer';
 import Error from './components/Error';
 import reportWebVitals from './reportWebVitals';
@@ -13,7 +12,6 @@ import Lodging from './pages/Lodging';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Header />
       <Switch>
         <Route exact path="/">
             <Home />

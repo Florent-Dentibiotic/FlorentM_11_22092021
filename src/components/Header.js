@@ -7,18 +7,17 @@ class Header extends Component{
     constructor(props) {
     super(props)
     this.state = {
-        page: this.props.match
     }
 }
 
     render(){
-        const Page = this.state.page
-        console.log(Page)
+        const UnderlineHome = this.props.underlineHome
+        const UnderlineAbout = this.props.underlineAbout
     return <nav className='header'> 
         <img src={logo} alt='kasa' className='header__logo' />
         <ul className='header__menu'>
-            <li><Link to="/">Accueil</Link></li>
-            <li><Link to="/about">À Propos</Link></li>
+            {UnderlineHome ? <li><Link to="/" className='underline__on'>Accueil</Link></li> : <li><Link to="/" className='underline__off'>Accueil</Link></li>}
+            {UnderlineAbout ? <li><Link to="/about" className='underline__on'>À Propos</Link></li> : <li><Link to="/about" className='underline__off'>À Propos</Link></li>}
         </ul>
     </nav>
     }

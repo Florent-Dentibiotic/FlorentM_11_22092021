@@ -2,6 +2,7 @@ import '../styles/About.css'
 import aboutImg from '../imgs/about__img.jpeg'
 import Dropdown from '../components/Dropdown'
 import { Component } from 'react'
+import Header from '../components/Header'
 
 
 const Abouts = [
@@ -14,18 +15,21 @@ const Abouts = [
 class About extends Component {
     render(){
         return (
+        <>
+        <Header underlineAbout={true}/>
         <main className="about">
-            <img src={ aboutImg } alt='Mountains' className="about__img" />
-            <section className='about__details'>
-                {Abouts.map((about, index) => (
-                    <Dropdown
-                        key={`${about.title}-${index}`}
-                        title={about.title}
-                        details={about.details}
-                    />
-                ))}
-            </section>
+                <img src={ aboutImg } alt='Mountains' className="about__img" />
+                <section className='about__details'>
+                    {Abouts.map((about, index) => (
+                        <Dropdown
+                            key={`${about.title}-${index}`}
+                            title={about.title}
+                            details={about.details}
+                        />
+                    ))}
+                </section>
         </main>
+        </>
     )}
 }
 

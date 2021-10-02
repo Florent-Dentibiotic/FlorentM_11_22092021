@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import '../styles/Home.css'
 import { Component } from 'react'
+import Header from '../components/Header'
 
 class Home extends Component{
     constructor(props) {
@@ -24,6 +25,8 @@ class Home extends Component{
     render(){
         const logementData = this.state.logementData
     return (
+        <>
+        <Header underlineHome={true}/>
         <main>
             <section className='home'>
                 <div className='home__background'><h2 className='home__title'>Chez vous, partout et ailleurs</h2></div>
@@ -39,6 +42,7 @@ class Home extends Component{
                 ))}
             </section>
         </main>
+        </>
     )}    
 }
 

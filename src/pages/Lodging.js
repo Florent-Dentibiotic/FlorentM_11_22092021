@@ -3,6 +3,7 @@ import { Component } from "react"
 import Dropdown from "../components/Dropdown"
 import Tags from "../components/Tags"
 import '../styles/Lodging.css'
+import Header from '../components/Header'
 
 class Lodging extends Component{
     constructor(props) {
@@ -11,12 +12,12 @@ class Lodging extends Component{
         lodgingId: this.props.match.params.lodgingId,
         lodgingData: [],
         rating: [
-        <div className='star__rating'><i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></div>,
-        <div className='star__rating'><i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></div>,
-        <div className='star__rating'><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></div>,
-        <div className='star__rating'><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> <i class="far fa-star"></i></div>,
-        <div className='star__rating'><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i></div>,
-        <div className='star__rating'><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></div>]
+        <div className='star__rating'><i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i></div>,
+        <div className='star__rating'><i className="fas fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i></div>,
+        <div className='star__rating'><i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i></div>,
+        <div className='star__rating'><i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i></div>,
+        <div className='star__rating'><i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i></div>,
+        <div className='star__rating'><i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i></div>]
     }
 }
 
@@ -39,6 +40,8 @@ componentDidMount() {
         console.log(rating)
         // let userId = this.props.match.params.lodgingId;
     return(
+        <>
+        <Header/>
         <main>
             <Carrousel imgs={lodgingData.pictures}/>
             <section className='lodging__title'>
@@ -62,6 +65,7 @@ componentDidMount() {
                 <Dropdown title={`Équipements`} details={<ul className='equipment__details'>{Equipments && Equipments.map(equipment => <li key={`equipment-${equipment}`}>{equipment}</li>)}</ul>}/>
             </section>
         </main>
+        </>
     )}
 }
 
