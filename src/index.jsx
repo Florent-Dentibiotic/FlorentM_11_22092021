@@ -16,8 +16,8 @@ ReactDOM.render(
         <Route exact path="/">
             <Home />
         </Route>
-        <Route path="/Lodging/:lodgingId" 
-        render={(props) => <Lodging {...props} />}/>
+        <Route  path="/Lodging/:lodgingId" 
+                render={(props) => <Lodging {...props} />}/>
         <Route path="/about">
             <About />
         </Route>
