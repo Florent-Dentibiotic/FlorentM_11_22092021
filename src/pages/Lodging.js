@@ -11,18 +11,10 @@ class Lodging extends Component{
     this.state = {
         lodgingId: this.props.match.params.lodgingId,
         lodgingData: [],
-        rating: [
-        <div className='star__rating'><i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i></div>,
-        <div className='star__rating'><i className="fas fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i></div>,
-        <div className='star__rating'><i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i></div>,
-        <div className='star__rating'><i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i></div>,
-        <div className='star__rating'><i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i></div>,
-        <div className='star__rating'><i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i></div>]
     }
 }
 
 componentDidMount() {
-    // const { id } = this.props.match.params
  
     fetch(`../logements.json`)
     .then((response) => response.json())
@@ -36,7 +28,13 @@ componentDidMount() {
         const lodgingData = this.state.lodgingData
         const Equipments = this.state.lodgingData.equipments
         const Host = this.state.lodgingData.host
-        const rating = this.state.rating
+        const rating = [<div className='star__rating'><i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i></div>,
+                        <div className='star__rating'><i className="fas fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i></div>,
+                        <div className='star__rating'><i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i></div>,
+                        <div className='star__rating'><i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i></div>,
+                        <div className='star__rating'><i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i></div>,
+                        <div className='star__rating'><i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i></div>]
+    
         console.log(rating)
         // let userId = this.props.match.params.lodgingId;
     return(
