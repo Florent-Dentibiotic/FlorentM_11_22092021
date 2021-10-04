@@ -1,116 +1,116 @@
 .home {
-  background-image: url(../imgs/IMG.png);
-  background-origin: border-box;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 223px;
-  border-radius: 25px;
+    background-image: url(../imgs/IMG.png);
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 223px;
+    border-radius: 25px;
 }
 
 .home__background {
-  background-color: rgb(0, 0, 0, 0.3);
-  border-radius: 25px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-color: rgb(0, 0, 0, 0.3);
+    border-radius: 25px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home__title {
-  text-align: center;
-  font-size: 48px;
-  font-weight: 500;
-  color: #ffffff;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 500;
+    color: #ffffff;
 }
 
 .home__grid {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  background-color: #f7f7f7;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(auto, 340px));
-  gap: 60px;
-  padding: 50px;
-  border-radius: 25px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: #f7f7f7;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(auto, 340px));
+    gap: 60px;
+    padding: 50px;
+    border-radius: 25px;
 }
 
 .home__grid a {
-  text-decoration: none;
-  color: #000;
+    text-decoration: none;
+    color: #000;
 }
 
 .home__grid__article {
-  position: relative;
-  height: 340px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 10px;
+    position: relative;
+    height: 340px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
 }
 
 .home__grid__article__img {
-  width: 100%;
-  height: 340px;
+    width: 100%;
+    height: 340px;
 }
 
 .home__grid__article img {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  object-fit: cover;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
 }
 .home__grid__article__img::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: block;
-  content: '';
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
-  border-radius: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+    border-radius: 10px;
 }
 
 .home__grid__article h3 {
-  font-size: 18px;
-  font-weight: 500;
-  margin: auto auto 30px 20px;
-  color: #ffffff;
-  position: absolute;
-  bottom: 4px;
-  width: 80%;
+    font-size: 18px;
+    font-weight: 500;
+    margin: auto auto 30px 20px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 4px;
+    width: 80%;
 }
 
 @media (max-width: 375px) {
-  .home {
-    height: 111px;
-    border-radius: 10px;
-  }
+    .home {
+        height: 111px;
+        border-radius: 10px;
+    }
 
-  .home__background {
-    border-radius: 10px;
-  }
+    .home__background {
+        border-radius: 10px;
+    }
 
-  .home__title {
-    margin-left: 1em;
-    text-align: left;
-    font-size: 24px;
-    font-weight: 500;
-  }
+    .home__title {
+        margin-left: 1em;
+        text-align: left;
+        font-size: 24px;
+        font-weight: 500;
+    }
 
-  .home__grid {
-    margin-top: 20px;
-    background-color: #f7f7f7;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(auto, 335px));
-    gap: 20px;
-    padding: 0;
-    border-radius: 25px;
-  }
+    .home__grid {
+        margin-top: 20px;
+        background-color: #f7f7f7;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(auto, 335px));
+        gap: 20px;
+        padding: 0;
+        border-radius: 25px;
+    }
 }

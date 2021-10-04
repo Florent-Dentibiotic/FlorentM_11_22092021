@@ -1,95 +1,95 @@
 .lodging__title {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .lodging__title h1 {
-  font-size: 36px;
-  color: #ff6060;
+    font-size: 36px;
+    color: #ff6060;
 }
 
 .lodging__title h2 {
-  font-size: 18px;
-  color: #ff6060;
-  margin-top: -5px;
+    font-size: 18px;
+    color: #ff6060;
+    margin-top: -5px;
 }
 
 .lodging__title__details {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .lodging__title__details h4 {
-  color: #ff6060;
-  font-size: 18px;
-  text-align: right;
-  width: 70px;
+    color: #ff6060;
+    font-size: 18px;
+    text-align: right;
+    width: 70px;
 }
 
 .lodging__title__details img {
-  border-radius: 50%;
-  width: 64px;
-  height: 64px;
-  margin-left: 2em;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    margin-left: 2em;
 }
 
 .lodging__host__details {
-  align-items: flex-end;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .tag__star {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .lodging__dropdowns {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(auto, 580px));
-  gap: 76px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(auto, 580px));
+    gap: 76px;
 }
 
 .equipment__details {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .star__rating {
-  color: #ff6060;
-  font-size: 36px;
+    color: #ff6060;
+    font-size: 36px;
 }
 
 @media (max-width: 375px) {
-  .lodging__title {
-    display: block;
-  }
-  .lodging__title h1 {
-    font-size: 18px;
-    max-width: 335px;
-  }
-  .lodging__title h2 {
-    font-size: 14px;
-  }
-  .lodging__host__details {
-    align-items: center;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-  .star__rating {
-    font-size: 15px;
-  }
-  .lodging__title__details h4 {
-    font-size: 12px;
-  }
-  .lodging__title__details img {
-    width: 32px;
-    height: 32px;
-    margin-left: 1em;
-  }
-  .lodging__dropdowns {
-    display: block;
-  }
+    .lodging__title {
+        display: block;
+    }
+    .lodging__title h1 {
+        font-size: 18px;
+        max-width: 335px;
+    }
+    .lodging__title h2 {
+        font-size: 14px;
+    }
+    .lodging__host__details {
+        align-items: center;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .star__rating {
+        font-size: 15px;
+    }
+    .lodging__title__details h4 {
+        font-size: 12px;
+    }
+    .lodging__title__details img {
+        width: 32px;
+        height: 32px;
+        margin-left: 1em;
+    }
+    .lodging__dropdowns {
+        display: block;
+    }
 }

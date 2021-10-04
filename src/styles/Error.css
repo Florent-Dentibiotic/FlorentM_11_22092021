@@ -1,23 +1,23 @@
 .error__404 {
-  color: #ff6060;
-  text-align: center;
-  margin-bottom: 30px;
+    color: #ff6060;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .error__404 > h2 {
-  font-size: 288px;
-  font-weight: 700;
-  margin-bottom: 0;
-  margin-top: 120px;
+    font-size: 288px;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 120px;
 }
 
 .error__404 > h3 {
-  font-size: 36px;
-  font-weight: 500;
-  margin-top: 20px;
-  margin-bottom: 182px;
+    font-size: 36px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 182px;
 }
 
 .error__404 > a {
-  color: #ff6060;
+    color: #ff6060;
 }
