@@ -12,8 +12,6 @@ class Carrousel extends Component {
     showNext = () => {
         if (this.state.imgIndex < this.props.imgs.length - 1) {
             this.setState({ imgIndex: this.state.imgIndex + 1 })
-            console.log(this.props.imgs.length)
-            console.log(this.state.imgIndex)
         } else {
             this.setState({ imgIndex: 0 })
         }
@@ -22,8 +20,6 @@ class Carrousel extends Component {
     showPrevious = () => {
         if (this.state.imgIndex >= 1) {
             this.setState({ imgIndex: this.state.imgIndex - 1 })
-            console.log(this.props.imgs.length)
-            console.log(this.state.imgIndex)
         } else {
             this.setState({ imgIndex: this.props.imgs.length - 1 })
         }

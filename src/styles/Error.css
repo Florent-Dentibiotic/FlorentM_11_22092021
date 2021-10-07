@@ -21,3 +21,16 @@
 .error__404 > a {
     color: #ff6060;
 }
+
+@media (max-width: 375px) {
+    .error__404 > h2 {
+        font-size: 96px;
+    }
+    .error__404 > h3 {
+        font-size: 18px;
+        margin-bottom: 133px;
+    }
+    .error__404 > a {
+        font-size: 14px;
+    }
+}

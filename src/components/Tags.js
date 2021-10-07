@@ -9,7 +9,6 @@ class Tags extends Component {
 
     render() {
         const tags = this.props.tags
-        console.log(tags)
 
         return (
             <ul className="tags__list">

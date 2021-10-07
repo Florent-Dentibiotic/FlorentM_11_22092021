@@ -12,8 +12,6 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        // const { id } = this.props.match.params
-
         fetch(`logements.json`)
             .then((response) => response.json())
             .then((jsonResponse) => {

@@ -69,8 +69,6 @@ class Lodging extends Component {
             </div>,
         ]
 
-        console.log(rating)
-        // let userId = this.props.match.params.lodgingId;
         if (this.state.isLodgingFound) {
             return (
                 <>
