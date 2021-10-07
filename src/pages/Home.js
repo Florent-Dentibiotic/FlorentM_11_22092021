@@ -18,7 +18,6 @@ class Home extends Component {
             .then((response) => response.json())
             .then((jsonResponse) => {
                 this.setState({ logementData: jsonResponse })
-                console.log(jsonResponse)
             })
     }
 

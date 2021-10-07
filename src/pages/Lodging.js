@@ -4,11 +4,13 @@ import Dropdown from '../components/Dropdown'
 import Tags from '../components/Tags'
 import '../styles/Lodging.css'
 import Header from '../components/Header'
+import Error from '../components/Error'
 
 class Lodging extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            isLodgingFound: false,
             lodgingId: this.props.match.params.lodgingId,
             lodgingData: [],
         }
@@ -18,12 +20,15 @@ class Lodging extends Component {
         fetch(`../logements.json`)
             .then((response) => response.json())
             .then((jsonResponse) => {
-                this.setState({
-                    lodgingData: jsonResponse.find(
-                        (e) => e.id === this.state.lodgingId
-                    ),
-                })
-                console.log(this.state.lodgingData)
+                const foundItem = jsonResponse.find(
+                    (e) => e.id === this.state.lodgingId
+                )
+                if (foundItem) {
+                    this.setState({
+                        isLodgingFound: true,
+                        lodgingData: foundItem,
+                    })
+                }
             })
     }
 
@@ -66,57 +71,63 @@ class Lodging extends Component {
 
         console.log(rating)
         // let userId = this.props.match.params.lodgingId;
-        return (
-            <>
-                <Header />
-                <main>
-                    <Carrousel imgs={lodgingData.pictures} />
-                    <section className="lodging__title">
-                        <div>
-                            <h1>{lodgingData.title}</h1>
-                            <h2>{lodgingData.location}</h2>
-                            <div className="tags__star">
-                                <Tags tags={lodgingData.tags} />
+        if (this.state.isLodgingFound) {
+            return (
+                <>
+                    <Header />
+                    <main>
+                        <Carrousel imgs={lodgingData.pictures} />
+                        <section className="lodging__title">
+                            <div>
+                                <h1>{lodgingData.title}</h1>
+                                <h2>{lodgingData.location}</h2>
+                                <div className="tags__star">
+                                    <Tags tags={lodgingData.tags} />
+                                </div>
                             </div>
-                        </div>
-                        <div className="lodging__host__details">
-                            <div className="lodging__title__details">
-                                {Host && (
-                                    <>
-                                        <h4>{Host.name}</h4>{' '}
-                                        <img
-                                            alt="host"
-                                            src={`${Host.picture}`}
-                                        />
-                                    </>
-                                )}
+                            <div className="lodging__host__details">
+                                <div className="lodging__title__details">
+                                    {Host && (
+                                        <>
+                                            <h4>{Host.name}</h4>{' '}
+                                            <img
+                                                alt="host"
+                                                src={`${Host.picture}`}
+                                            />
+                                        </>
+                                    )}
+                                </div>
+                                {rating[lodgingData.rating]}
                             </div>
-                            {rating[lodgingData.rating]}
-                        </div>
-                    </section>
+                        </section>
 
-                    <section className="lodging__dropdowns">
-                        <Dropdown
-                            title={`Description`}
-                            details={lodgingData.description}
-                        />
-                        <Dropdown
-                            title={`Équipements`}
-                            details={
-                                <ul className="equipment__details">
-                                    {Equipments &&
-                                        Equipments.map((equipment) => (
-                                            <li key={`equipment-${equipment}`}>
-                                                {equipment}
-                                            </li>
-                                        ))}
-                                </ul>
-                            }
-                        />
-                    </section>
-                </main>
-            </>
-        )
+                        <section className="lodging__dropdowns">
+                            <Dropdown
+                                title={`Description`}
+                                details={lodgingData.description}
+                            />
+                            <Dropdown
+                                title={`Équipements`}
+                                details={
+                                    <ul className="equipment__details">
+                                        {Equipments &&
+                                            Equipments.map((equipment) => (
+                                                <li
+                                                    key={`equipment-${equipment}`}
+                                                >
+                                                    {equipment}
+                                                </li>
+                                            ))}
+                                    </ul>
+                                }
+                            />
+                        </section>
+                    </main>
+                </>
+            )
+        } else {
+            return <Error />
+        }
     }
 }
 

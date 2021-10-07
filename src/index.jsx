@@ -17,10 +17,11 @@ ReactDOM.render(
                     <Home />
                 </Route>
                 <Route
+                    exact
                     path="/Lodging/:lodgingId"
                     render={(props) => <Lodging {...props} />}
                 />
-                <Route path="/about">
+                <Route exact path="/about">
                     <About />
                 </Route>
                 <Route>
